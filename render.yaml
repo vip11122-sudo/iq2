@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: video-downloader-api
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: CORS_ORIGIN
+        sync: false
